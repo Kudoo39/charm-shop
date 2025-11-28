@@ -1,3 +1,5 @@
+import shopImage from "../assets/AnShop.png";
+
 export default function About() {
   return (
     <div className="bg-cream min-h-screen font-body text-gray-700 pb-20">
@@ -29,7 +31,7 @@ export default function About() {
         </div>
 
         <img
-          src="./public/AnShop.png"
+          src={shopImage}
           className="rounded-2xl shadow-md w-full object-cover h-80"
         />
       </section>

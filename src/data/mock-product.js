@@ -1,0 +1,58 @@
+export const products = [
+  {
+    id: 1,
+    name: "Charm điện thoại pastel",
+    price: 45000,
+    image: "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmr181ebtkv376",
+    category: "charm",
+  },
+  {
+    id: 2,
+    name: "Vòng cổ ngọc trai mini",
+    price: 89000,
+    image: "https://trangsucngoctrai.topweb.com.vn/wp-content/uploads/2017/10/vong-co-ngoc-trai-vct133.jpg  ",
+    category: "necklace",
+  },
+  {
+    id: 3,
+    name: "Lắc tay hạt resin",
+    price: 69000,
+    image: "https://down-vn.img.susercontent.com/file/sg-11134201-7rbk0-lktbdf7j664725",
+    category: "bracelet",
+  },
+  {
+    id: 4,
+    name: "Bông tai giọt nước",
+    price: 79000,
+    image: "https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg",
+    category: "earring",
+  },
+    {
+    id: 5,
+    name: "Charm",
+    price: 35000,
+    image: "https://beadies.com/cdn/shop/files/Eigen-ontwerp-bedelketting-Beadies-bedels-goud-gekleurd.jpg?v=1736867692",
+    category: "charm",
+  },
+  {
+    id: 6,
+    name: "Vòng cổ",
+    price: 79000,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wfqdM_axXc5zyrPkhSEmSlTw6mEoudffdX52iKOYJjbSAujRcsWSqtnGUMty_IshnJM&usqp=CAU",
+    category: "necklace",
+  },
+  {
+    id: 7,
+    name: "Lắc tay",
+    price: 59000,
+    image: "https://pos.nvncdn.com/331316-3334/ps/20241212_Khd5WErS1c.jpeg",
+    category: "bracelet",
+  },
+  {
+    id: 8,
+    name: "Bông tai",
+    price: 69000,
+    image: "https://bacminhcanh.com/wp-content/uploads/2018/10/bong-tai-nu-6-chau-1.jpg",
+    category: "earring",
+  },
+];

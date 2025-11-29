@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import Logo from "../assets/AnShop-logo.png";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -10,9 +11,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6">
 
         {/* LOGO */}
-        <h1 className="text-3xl font-display text-rose cursor-pointer">
-          AnShop
-        </h1>
+        <img src={Logo} alt="Logo" className="h-12"/>
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex gap-8 text-rose-light font-medium text-sm">

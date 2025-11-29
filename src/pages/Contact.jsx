@@ -22,13 +22,13 @@ export default function Contact() {
 
             <div className="flex items-start gap-4 mb-5">
               <Phone className="text-rose w-6 h-6" />
-              <p className="text-gray-700">0909 123 456</p>
+              <p className="text-gray-700">0388 556 900</p>
             </div>
 
             <div className="flex items-start gap-4 mb-5">
               <MapPin className="text-rose w-6 h-6" />
               <p className="text-gray-700">
-                Quận 11, TP. Hồ Chí Minh  
+                163/12 Lý Nam Đế, Phường Minh Phụng, TP. Hồ Chí Minh  
               </p>
             </div>
 

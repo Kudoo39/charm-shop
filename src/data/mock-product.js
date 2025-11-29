@@ -55,4 +55,18 @@ export const products = [
     image: "https://bacminhcanh.com/wp-content/uploads/2018/10/bong-tai-nu-6-chau-1.jpg",
     category: "earring",
   },
+  {
+    id: 9,
+    name: "Kẹp tóc",
+    price: 29000,
+    image: "https://jola.vn/cdn/720/Product/DjEwszQb_/03-0947-kep-toc-hinh-no.jpg",
+    category: "hairpin",
+  },
+  {
+    id: 10,
+    name: "Kẹp tóc hình nơ",
+    price: 39000,
+    image: "https://product.hstatic.net/1000111569/product/kep_toc_cang_cua___1__bddfa39b0c39467aa5d77e3f93ce5e41_large.jpg",
+    category: "hairpin",
+  }
 ];

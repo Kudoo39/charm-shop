@@ -1,10 +1,12 @@
-import { Sparkles, HandCoins, Award, Gem } from "lucide-react";
+import { Sparkles, HandCoins, Award, Gem, SwatchBook, Bubbles } from "lucide-react";
 
 const categories = [
   { icon: Sparkles, label: "Charm điện thoại" },
   { icon: HandCoins, label: "Vòng cổ" },
   { icon: Award, label: "Lắc tay" },
   { icon: Gem, label: "Bông tai" },
+  { icon: SwatchBook, label: "Kẹp tóc" },
+  { icon: Bubbles, label: "Phụ kiện khác" },
 ];
 
 export default function FeaturedCategories() {

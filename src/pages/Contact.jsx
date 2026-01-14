@@ -17,7 +17,7 @@ export default function Contact() {
 
             <div className="flex items-start gap-4 mb-5">
               <Mail className="text-rose w-6 h-6" />
-              <p className="text-gray-700">anshop@gmail.com</p>
+              <p className="text-gray-700">anshop1973@gmail.com</p>
             </div>
 
             <div className="flex items-start gap-4 mb-5">

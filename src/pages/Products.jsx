@@ -1,10 +1,21 @@
-import { products } from "../data/mock-product";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 
 function formatPrice(vnd) {
   return vnd.toLocaleString("vi-VN") + " ₫";
 }
 
 export default function Products() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    supabase
+      .from("products")
+      .select("*")
+      .eq("is_featured", true)
+      .then(({ data }) => setProducts(data));
+  }, []);
+
   return (
     <section className="py-20 max-w-6xl mx-auto px-6">
       <h3 className="text-3xl font-display text-center text-rose mb-12">
@@ -18,7 +29,7 @@ export default function Products() {
             className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition"
           >
             <img
-              src={p.image}
+              src={p.image_url}
               alt={p.name}
               className="w-full h-40 object-contain mb-4"
             />

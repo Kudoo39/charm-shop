@@ -1,23 +1,21 @@
-import { products } from "../data/mock-product";
-
-// import { useEffect, useState } from "react";
-// import { supabase } from "../lib/supabase";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 
 function formatPrice(vnd) {
   return vnd.toLocaleString("vi-VN") + " ₫";
 }
 
 export default function FeaturedProducts() {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   supabase
-  //     .from("products")
-  //     .select("*")
-  //     .eq("is_featured", true)
-  //     .limit(4)
-  //     .then(({ data }) => setProducts(data));
-  // }, []);
+  useEffect(() => {
+    supabase
+      .from("products")
+      .select("*")
+      .eq("is_featured", true)
+      .limit(4)
+      .then(({ data }) => setProducts(data));
+  }, []);
 
   return (
     <section className="py-20 max-w-6xl mx-auto px-6">
@@ -32,7 +30,7 @@ export default function FeaturedProducts() {
             className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition"
           >
           <img
-            src={p.image_url}
+            src={p.image}
             alt={p.name}
             className="w-full h-40 object-contain mb-4"
           />

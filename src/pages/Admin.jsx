@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
 import { uploadProductImage } from "../lib/uploadImage";
+import { toast } from "react-toastify";
 
 export default function Admin() {
   const [name, setName] = useState("");
@@ -11,6 +12,9 @@ export default function Admin() {
   
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
 
   useEffect(() => {
     fetchProducts();
@@ -47,12 +51,12 @@ export default function Admin() {
     e.preventDefault();
 
     if (!image) {
-      alert("Vui lòng chọn ảnh sản phẩm");
+      toast.warning("⚠️ Vui lòng chọn ảnh sản phẩm");
       return;
     }
 
     if (!categoryId) {
-      alert("Vui lòng chọn danh mục");
+      toast.warning("⚠️ Vui lòng chọn danh mục");
       return;
     }
 
@@ -69,9 +73,12 @@ export default function Admin() {
         is_featured: false,
       });
 
-      if (error) throw error;
+      if (error) {
+        toast.error("❌ Thêm sản phẩm thất bại");
+        return;
+      }
 
-      alert("Thêm sản phẩm thành công!");
+      toast.success("🎉 Thêm sản phẩm thành công!");
       setName("");
       setPrice("");
       setCategoryId("");
@@ -84,19 +91,17 @@ export default function Admin() {
 }
 
 async function handleDelete(id) {
-  const ok = confirm("Bạn chắc chắn muốn xóa sản phẩm này?");
-  if (!ok) return;
-
   const { error } = await supabase
     .from("products")
     .delete()
     .eq("id", id);
 
   if (error) {
-    alert(error.message);
+    toast.error("❌ Xóa sản phẩm thất bại");
     return;
   }
 
+  toast.success("🗑️ Đã xóa sản phẩm!");
   setProducts((prev) => prev.filter((p) => p.id !== id));
 }
 
@@ -123,7 +128,7 @@ async function toggleFeatured(productId, currentValue) {
 
   return (
     <>
-      <div className="mt-12 px-12">
+      <div className="mt-12 px-4">
         <h2 className="text-xl font-semibold mb-4 text-rose">
           Danh sách sản phẩm
         </h2>
@@ -137,7 +142,7 @@ async function toggleFeatured(productId, currentValue) {
                 <th className="p-3 text-right">Giá</th>
                 <th className="p-3 text-left">Danh mục</th>
                 <th className="p-3 text-center">Xóa Sản Phẩm</th>
-                 <th className="p-3 text-center">Sản Phẩm Nổi Bật</th>
+                <th className="p-3 text-center">Sản Phẩm Nổi Bật</th>
               </tr>
             </thead>
 
@@ -164,8 +169,11 @@ async function toggleFeatured(productId, currentValue) {
 
                   <td className="p-3 text-center">
                     <button
-                      onClick={() => handleDelete(p.id)}
-                      className="text-red-500 hover:underline"
+                      onClick={() => {
+                        setDeleteId(p.id);
+                        setShowDeleteModal(true);
+                      }}
+                      className="text-red-500 hover:underline cursor-pointer"
                     >
                       Xóa
                     </button>
@@ -192,7 +200,7 @@ async function toggleFeatured(productId, currentValue) {
             </tbody>
           </table>
         </div>
-          </div>
+      </div>
 
       <div className="max-w-xl mx-auto py-20 px-6">
       <h1 className="text-3xl font-display text-rose mb-10 text-center">
@@ -270,13 +278,50 @@ async function toggleFeatured(productId, currentValue) {
 
           <button
             disabled={loading}
-            className="w-full bg-rose text-white py-3 rounded-full font-medium tracking-wide hover:bg-rose-light transition disabled:opacity-60"
+            className="w-full bg-rose text-white py-3 rounded-full font-medium tracking-wide hover:bg-rose-light transition disabled:opacity-60 cursor-pointer"
           >
             {loading ? "Đang lưu..." : "Thêm sản phẩm"}
           </button>
         </form>
 
       </div>
+
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 w-full max-w-sm shadow">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              Xóa sản phẩm?
+            </h3>
+
+            <p className="text-sm text-gray-500 mb-6">
+              Bạn có chắc chắn muốn xóa sản phẩm này không?
+            </p>
+
+            <div className="flex justify-end gap-3">
+              <button
+                onClick={() => {
+                  setShowDeleteModal(false);
+                  setDeleteId(null);
+                }}
+                className="px-4 py-2 rounded-full border text-gray-600 hover:bg-gray-100 cursor-pointer"
+              >
+                Hủy
+              </button>
+
+              <button
+                onClick={() => {
+                  handleDelete(deleteId);
+                  setShowDeleteModal(false);
+                  setDeleteId(null);
+                }}
+                className="px-4 py-2 rounded-full bg-red-500 text-white hover:bg-red-600 cursor-pointer"
+              >
+                Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -11,7 +11,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6">
 
         {/* LOGO */}
-        <img src={Logo} alt="Logo" className="h-12"/>
+        <Link to="/"><img src={Logo} alt="Logo" className="h-12"/></Link>
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex gap-8 text-rose-light font-medium text-sm">

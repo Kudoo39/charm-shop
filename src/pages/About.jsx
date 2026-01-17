@@ -10,7 +10,7 @@ export default function About() {
           Về AnShop
         </h1>
         <p className="max-w-2xl mx-auto text-gray-600 leading-relaxed">
-          Nơi những món phụ kiện nhỏ bé mang theo sự tinh tế, sự dịu dàng và câu chuyện riêng dành cho bạn.
+          Nơi những món phụ kiện nhỏ bé mang theo sự tinh tế, sự dịu dàng và câu chuyện riêng dành cho bạn 🌸
         </p>
       </section>
 
@@ -44,21 +44,21 @@ export default function About() {
 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-            <h3 className="text-xl font-display text-rose mb-3">Tinh tế</h3>
+            <h3 className="text-xl font-display text-rose mb-3">Tinh tế 💍</h3>
             <p className="text-gray-600 leading-6">
               Mỗi sản phẩm đều được chọn lựa kỹ càng, mang nét đẹp dịu dàng, phù hợp với phong cách nữ tính.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-            <h3 className="text-xl font-display text-rose mb-3">Chất lượng</h3>
+            <h3 className="text-xl font-display text-rose mb-3">Chất lượng 💎</h3>
             <p className="text-gray-600 leading-6">
               Chúng tôi ưu tiên những chất liệu an toàn cho da, độ bền tốt và đảm bảo tính thẩm mỹ.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-            <h3 className="text-xl font-display text-rose mb-3">Dễ thương & Hợp thời</h3>
+            <h3 className="text-xl font-display text-rose mb-3">Dễ thương & Hợp thời 🌟</h3>
             <p className="text-gray-600 leading-6">
               Luôn cập nhật xu hướng phụ kiện mới nhất giúp bạn tự tin thể hiện phong cách riêng.
             </p>

@@ -19,7 +19,7 @@ export default function FeaturedProducts() {
   return (
     <section className="py-20 max-w-6xl mx-auto px-6">
       <h3 className="text-3xl font-display text-center text-rose mb-12">
-        Sản phẩm nổi bật
+        Sản phẩm nổi bật 🎀
       </h3>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

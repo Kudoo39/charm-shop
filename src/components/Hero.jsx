@@ -7,7 +7,7 @@ export default function Hero() {
 
       <p className="text-lg text-gray-600 max-w-xl mx-auto mb-8">
         Vòng cổ, charm, dây chuyền, móc khóa handmade và phụ kiện dễ thương
-        được chọn lọc kỹ lưỡng. Mỗi món đều mang một câu chuyện nhỏ dành riêng cho bạn.
+        được chọn lọc kỹ lưỡng. Mỗi món đều mang một câu chuyện nhỏ dành riêng cho bạn ❤️
       </p>
 
        <a

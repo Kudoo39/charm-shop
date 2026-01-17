@@ -6,7 +6,7 @@ export default function Story() {
       <p className="text-gray-600 leading-7 mb-8">
         Tại AnShop, chúng tôi tin rằng mỗi món phụ kiện không chỉ là một vật trang trí 
         mà còn là một phần của câu chuyện cá nhân. Được thành lập vào năm 2025, chúng tôi 
-        luôn nỗ lực mang đến những sản phẩm độc đáo, chất lượng cao và đầy ý nghĩa.
+        luôn nỗ lực mang đến những sản phẩm độc đáo, chất lượng cao và đầy ý nghĩa 💝
       </p>
     </section>
   );

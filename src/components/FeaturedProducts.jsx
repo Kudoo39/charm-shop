@@ -13,7 +13,6 @@ export default function FeaturedProducts() {
       .from("products")
       .select("*")
       .eq("is_featured", true)
-      .limit(4)
       .then(({ data }) => setProducts(data));
   }, []);
 
@@ -30,7 +29,7 @@ export default function FeaturedProducts() {
             className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition"
           >
           <img
-            src={p.image}
+            src={p.image_url}
             alt={p.name}
             className="w-full h-40 object-contain mb-4"
           />
@@ -39,10 +38,6 @@ export default function FeaturedProducts() {
             <p className="text-rose font-semibold mb-3">
               {formatPrice(p.price)}
             </p>
-
-            <button className="w-full px-3 py-2 bg-rose text-white rounded-full text-sm hover:bg-rose-light transition">
-              Thêm vào giỏ
-            </button>
           </article>
         ))}
       </div>

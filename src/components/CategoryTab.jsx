@@ -3,7 +3,7 @@ export default function CategoryTab({ active, children, onClick }) {
     <button
       onClick={onClick}
       className={`
-        px-5 py-2 rounded-full text-sm font-medium transition
+        px-5 py-2 rounded-full text-sm font-medium transition cursor-pointer
         ${
           active
             ? "bg-rose text-white shadow"

@@ -9,11 +9,18 @@ export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    supabase
-      .from("products")
-      .select("*")
-      .eq("is_featured", true)
-      .then(({ data }) => setProducts(data));
+    async function fetchProducts() {
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+
+      console.log("data:", data);
+      console.log("error:", error);
+
+      if (!error) setProducts(data ?? []);
+    }
+
+    fetchProducts();
   }, []);
 
   return (
